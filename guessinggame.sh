@@ -1,25 +1,24 @@
-function check
+c=0
+echo "How mmay files are in the current directory?"
+function input
 {
-	while [ $c -ne 1 ]
-	do
-		input
-
-		if [ $guess -eq "3" ]
-		then
-			c=1
-			echo "Congratulations! Your guess is correct."
-
-		elif [ $guess -lt "3" ]
-		then
-			echo -e "Your guess is too low.\nPlease try again:"
-
-		else
-			echo -e "Your guess is too high.\nPlease try again:"
-		fi
-	done
+	read guess
 }
 
-c=0
-echo "How many files are in the current directory?"
-read guess
-check
+while [ $c -ne 1 ]
+do
+	input
+	if [ $guess -eq "3" ]
+	then
+		c=1
+		echo "Congratulations! Your guess is correct."
+	
+	elif [ $guess -lt "3" ]
+	then
+		echo -e "Your guess is too low.\nPlease try again:"
+	
+	else
+		echo -e "Your guess is too high.\nPlease try again:"
+	fi
+done
+
